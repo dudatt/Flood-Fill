@@ -50,20 +50,4 @@ public class Queue<E> {
         }
         return data;
     }
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder("[");
-        No<E> current = front;
-        while (current != null) {
-            sb.append(current.element);
-            if (current.next != null) {
-                sb.append(", ");
-            }
-            current = current.next;
-        }
-        sb.append("]");
-        return sb.toString();
-    }
-
 }
