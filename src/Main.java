@@ -6,8 +6,9 @@ import java.io.IOException;
 public class Main {
     public static void main(String[] args) {
         try {
-            FloodFill stack = new FloodFill("src/base.jpg");
-            stack.floodFillStack(100, 100, 0);
+            FloodFill stack = new FloodFill("src/base.png");
+//            stack.floodFillStack(100, 100, -65536);
+            stack.floodFillQueue(100, 100, -65536);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

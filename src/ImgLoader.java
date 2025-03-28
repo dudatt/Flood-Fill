@@ -39,7 +39,7 @@ public class ImgLoader {
 
             if (newImage != null) {
                 System.out.println("Imagem carregada com sucesso!");
-                display(newImage); // Exibe a imagem automaticamente
+                display(newImage);
             } else {
                 System.out.println("Falha ao carregar a imagem.");
             }
