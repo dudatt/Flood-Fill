@@ -1,7 +1,12 @@
-public class FloodFill {
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
-<<<<<<< Updated upstream
-=======
+public class FloodFill {
+    private BufferedImage image;
+    private ImgLoader imgLoader;
+
     public FloodFill(String caminho) throws IOException  {
         image = ImageIO.read(new File(caminho));
         this.imgLoader = new ImgLoader();
@@ -85,6 +90,7 @@ public class FloodFill {
                 y >= 0 && y < image.getHeight();
     }
 
+
     public void salvarImagem(String caminhoSaida) {
         try {
             File arquivoSaida = new File(caminhoSaida);
@@ -94,5 +100,4 @@ public class FloodFill {
             System.out.println("Erro ao salvar a imagem: " + e.getMessage());
         }
     }
->>>>>>> Stashed changes
 }
