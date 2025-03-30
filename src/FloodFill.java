@@ -56,20 +56,21 @@ public class FloodFill {
         queue.enqueue(new int[]{xInicial, yInical});
         int contPixel = 0;
 
+        final int UPDATE_THRESHOLD = 500; // Atualiza a imagem a cada 500 pixels preenchidos
+
         while (!queue.isEmpty()) {
             int[] pixel = queue.dequeue();
             int x = pixel[0];
             int y = pixel[1];
-
-            if (limiteImagem(x, y) && corInicial == image.getRGB(x, y)) {
+            
+            if (limiteImagem(x, y) && corInicial == image.getRGB(x,y)) {
                 image.setRGB(x, y, corNova);
-                imgLoader.display(image);
                 contPixel++;
 
-                if (contPixel % 100 == 0) {
+                if (contPixel % UPDATE_THRESHOLD == 0) {
                     imgLoader.display(image);
                     try {
-                        Thread.sleep(2);
+                        Thread.sleep(10); // Atraso para visualização
                     } catch (InterruptedException e) {
                         throw new RuntimeException(e);
                     }
@@ -81,10 +82,22 @@ public class FloodFill {
                 queue.enqueue(new int[]{x - 1, y}); //Esquerda
             }
         }
+        imgLoader.display(image);
     }
 
     private boolean limiteImagem(int x, int y) {
         return x >= 0 && x < image.getWidth() &&
                 y >= 0 && y < image.getHeight();
+    }
+
+
+    public void salvarImagem(String caminhoSaida) {
+        try {
+            File arquivoSaida = new File(caminhoSaida);
+            ImageIO.write(image, "png", arquivoSaida);
+            System.out.println("Imagem salva com sucesso em: " + caminhoSaida);
+        } catch (IOException e) {
+            System.out.println("Erro ao salvar a imagem: " + e.getMessage());
+        }
     }
 }
