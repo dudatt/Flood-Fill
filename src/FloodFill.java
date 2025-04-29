@@ -34,7 +34,7 @@ public class FloodFill {
                 if (contPixel % 100 == 0) {
                     imgLoader.display(image);
                     try {
-                        Thread.sleep(2);
+                        Thread.sleep(30);
                     } catch (InterruptedException e) {
                         throw new RuntimeException(e);
                     }
@@ -70,7 +70,7 @@ public class FloodFill {
                 if (contPixel % UPDATE_THRESHOLD == 0) {
                     imgLoader.display(image);
                     try {
-                        Thread.sleep(10); // Atraso para visualização
+                        Thread.sleep(20); 
                     } catch (InterruptedException e) {
                         throw new RuntimeException(e);
                     }

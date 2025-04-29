@@ -8,14 +8,14 @@ public class Main {
         try {
 
             // Imagem com Stack
-            FloodFill stackFloadFill = new FloodFill("src/base.png");
-            stackFloadFill.floodFillQueue(100, 100, -65536);
-            stackFloadFill.salvarImagem("src/output/stack-output.png");
+            //FloodFill stackFloadFill = new FloodFill("src/base.png");
+            //stackFloadFill.floodFillStack(100, 100, -65536);
+            //stackFloadFill.salvarImagem("src/output/stack-output.png");
 
             //Imagem com Queue
-            //FloodFill queueFloaFill = new FloodFill("src/base.png");
-            //queueFloaFill.floodFillQueue(100, 100, -65536);
-            //queueFloaFill.salvarImagem("src/output/queue-output.png");
+            FloodFill queueFloaFill = new FloodFill("src/base.png");
+            queueFloaFill.floodFillQueue(100, 100, -65536);
+            queueFloaFill.salvarImagem("src/output/queue-output.png");
 
         } catch (IOException e) {
             throw new RuntimeException(e);
